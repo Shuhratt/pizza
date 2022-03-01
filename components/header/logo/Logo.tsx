@@ -1,10 +1,14 @@
 import React from "react";
-import styles from "./Logo.module.scss";
 import Link from "next/link";
 import styled from "styled-components";
 
 const LogoDiv = styled.div`
   display: flex;
+
+  > a {
+    display: flex;
+    align-item: center;
+  }
 `;
 
 export const Logo = () => {
