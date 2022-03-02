@@ -1,11 +1,20 @@
 import React, { FC, ReactNode } from "react";
-import { Header } from "@components/header/Header";
+import { Header } from "components";
+import styled from "styled-components";
 
-export const Layout: FC<{ children: ReactNode }> = ({ children }) => {
+const LayoutContainer = styled.div`
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+`;
+
+const Layout: FC<{ children: ReactNode }> = ({ children }) => {
   return (
-    <div>
+    <LayoutContainer>
       <Header />
       <main>{children}</main>
-    </div>
+    </LayoutContainer>
   );
 };
+
+export default Layout;
