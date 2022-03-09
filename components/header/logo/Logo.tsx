@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import LogoSvg from "@public/icons/logo.svg";
@@ -16,9 +16,16 @@ const LogoContainer = styled.div`
 const LogoText = styled.div`
   display: flex;
   flex-direction: column;
+  margin-left: 10px;
+
+  span {
+    &:first-child {
+      font-weight: bold;
+    }
+  }
 `;
 
-const Logo = () => {
+const Logo: FC<{}> = () => {
   return (
     <LogoContainer>
       <Link href={"/"}>

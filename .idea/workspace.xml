@@ -21,9 +21,11 @@
   <component name="ChangeListManager">
     <list default="true" id="5da7817f-6c8f-446d-9f4d-981078a61fdc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-env.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/next-env.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/header/logo/Logo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/header/logo/Logo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles/global.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +70,7 @@
       <updated>1646122801856</updated>
       <workItem from="1646122803101" duration="22899000" />
       <workItem from="1646504206582" duration="633000" />
-      <workItem from="1646809647112" duration="1170000" />
+      <workItem from="1646809647112" duration="7850000" />
     </task>
     <servers />
   </component>
@@ -100,6 +102,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1646140713008" />
+    <state x="425" y="187" key="run.anything.popup" timestamp="1646814878103">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1646814878103" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1646213570328">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
