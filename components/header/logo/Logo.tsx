@@ -1,6 +1,5 @@
 import React, { FC } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import LogoSvg from "@public/icons/logo.svg";
 import styled from "styled-components";
 
@@ -30,7 +29,7 @@ const Logo: FC<{}> = () => {
     <LogoContainer>
       <Link href={"/"}>
         <a>
-          <Image src={LogoSvg} />
+          <LogoSvg />
           <LogoText>
             <span>REACT PIZZA</span>
             <span>самая вкусная пицца во вселенной</span>

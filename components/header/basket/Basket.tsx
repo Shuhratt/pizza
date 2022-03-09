@@ -1,5 +1,4 @@
 import React, { FC } from "react";
-import Image from "next/image";
 import BasketSvg from "@public/icons/basket.svg";
 import styled from "styled-components";
 
@@ -36,7 +35,7 @@ const Basket: FC<{}> = () => {
     <BasketBox onClick={() => console.log("1")}>
       <BasketText>520 ₽</BasketText>
       <BasketText>
-        <Image src={BasketSvg} />
+        <BasketSvg />
         <span>3</span>
       </BasketText>
     </BasketBox>

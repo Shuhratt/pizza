@@ -3,12 +3,13 @@ import { Header } from "components";
 import styled from "styled-components";
 
 const LayoutContainer = styled.div`
-  max-width: 1420px;
+  max-width: calc(100vw - 10%);
   width: 100%;
-  margin: 20px auto;
+  margin: auto;
   background: #fff;
   border-radius: 20px;
-  padding: 0 20px 60px;
+  padding: 0 20px;
+  min-height: 100vh;
 `;
 
 const Layout: FC<{ children: ReactNode }> = ({ children }) => {

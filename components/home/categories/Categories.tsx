@@ -1,6 +1,6 @@
 import React, { FC, useState } from "react";
 import styled from "styled-components";
-import { CategoriesProps } from "./Categories.props";
+import type { CategoriesProps } from "./Categories.props";
 import cn from "classnames";
 
 const Navigation = styled.nav`
@@ -14,18 +14,19 @@ const Navigation = styled.nav`
 
     li {
       padding: 13px 15px;
-      background: #f9f9f9;
+      background-color: #f9f9f9;
       border-radius: 30px;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
       font-weight: bold;
-      transition: background 0.1s ease, color 0.1s ease;
+      transition: background-color 0.2s ease, color 0.2s ease;
       user-select: none;
 
-      &.active {
-        background: #333;
+      &.active,
+      &:hover {
+        background-color: #333;
         color: #fff;
       }
     }
