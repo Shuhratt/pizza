@@ -34,7 +34,7 @@ const ListBoxStyled = styled(ListBox)`
   left: 42%;
   right: 0;
   background: #ffffff;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.09);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.09);
   border-radius: 10px;
 
   > div {
