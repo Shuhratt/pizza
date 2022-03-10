@@ -1,37 +1,55 @@
-import React, { FC, useState } from "react";
+import React, { Dispatch, FC, SetStateAction, useState } from "react";
 import ArrowSvg from "@public/icons/arrow.svg";
 import styled from "styled-components";
+import { Arrow, SortingBox, SortingBoxRel } from "@components/home/sorting/SortingStyled";
 
-const SortingBox = styled.div`
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  user-select: none;
+const ListBox: FC<{ list: Array<string>; setIsOpen: Dispatch<SetStateAction<boolean>>; className?: string }> = ({
+  list,
+  className,
+  setIsOpen,
+}) => {
+  return (
+    <div
+      className={className}
+      onClick={(e) => {
+        const target = e.target as HTMLElement;
+        console.log(target.getAttribute("data-id"));
+        setIsOpen(false);
+      }}
+    >
+      {list.map((text, i) => {
+        return (
+          <div key={i} data-id={++i}>
+            {text}
+          </div>
+        );
+      })}
+    </div>
+  );
+};
 
-  span {
+const ListBoxStyled = styled(ListBox)`
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 42%;
+  right: 0;
+  background: #ffffff;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.09);
+  border-radius: 10px;
+
+  > div {
+    padding: 10px 14px;
     font-size: 14px;
     line-height: 17px;
-    letter-spacing: 0.015em;
+    cursor: pointer;
 
-    &:first-of-type {
+    &.active,
+    &:hover {
+      background: rgba(254, 95, 30, 0.05);
       font-weight: bold;
-      margin-right: 5px;
-      margin-left: 5px;
-    }
-
-    &:last-of-type {
       color: #fe5f1e;
-      text-decoration: underline;
     }
   }
-`;
-
-const Arrow = styled.div<{ isRotate: boolean }>`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.15s ease;
-  transform: ${(props) => (props.isRotate ? "rotate(0)" : "rotate(180deg)")};
 `;
 
 const Sorting: FC<{}> = () => {
@@ -39,13 +57,16 @@ const Sorting: FC<{}> = () => {
   const onOpenSortClicked = () => setIsOpen((v) => !v);
 
   return (
-    <SortingBox onClick={onOpenSortClicked}>
-      <Arrow isRotate={isOpen}>
-        <ArrowSvg />
-      </Arrow>
-      <span>Сортировка по:</span>
-      <span>популярности</span>
-    </SortingBox>
+    <SortingBoxRel>
+      <SortingBox onClick={onOpenSortClicked}>
+        <Arrow isRotate={isOpen}>
+          <ArrowSvg />
+        </Arrow>
+        <span>Сортировка по:</span>
+        <span>популярности</span>
+      </SortingBox>
+      {isOpen && <ListBoxStyled list={["популярности", "по цене", "по алфавиту"]} setIsOpen={setIsOpen} />}
+    </SortingBoxRel>
   );
 };
 
