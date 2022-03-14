@@ -19,3 +19,11 @@ ul {
   margin: 0;
   padding: 0;
 }
+
+button {
+  appearance: none;
+  border: none;
+  outline: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
