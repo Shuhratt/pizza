@@ -33,10 +33,10 @@ const BasketText = styled.span`
 const Basket: FC<{}> = () => {
   return (
     <BasketBox onClick={() => console.log("1")}>
-      <BasketText>520 ₽</BasketText>
+      <BasketText>0 ₽</BasketText>
       <BasketText>
         <BasketSvg />
-        <span>3</span>
+        <span>0</span>
       </BasketText>
     </BasketBox>
   );

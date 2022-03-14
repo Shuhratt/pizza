@@ -20,9 +20,10 @@ const Label = styled.div<{ isActive?: boolean }>`
   letter-spacing: 0.015em;
   padding: 10px;
   cursor: pointer;
-  border-radius: 10px;
   background-color: ${(props) => (props.isActive ? "#fff" : "transparent")};
   user-select: none;
+  box-shadow: ${(props) => props.isActive && "0px 2px 4px rgba(0, 0, 0, 0.04)"};
+  border-radius: 5px;
 `;
 
 export const CardRadios: FC<{ types: Array<{ id: number; text: string }> }> = ({ types }) => {

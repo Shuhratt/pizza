@@ -13,6 +13,8 @@ export const items = [
       { id: 3, text: "40 см." },
     ],
     price: 400,
+    category: 0,
+    rating: 0,
   },
   {
     id: 1,
@@ -28,5 +30,7 @@ export const items = [
       { id: 3, text: "40 см." },
     ],
     price: 900,
+    category: 0,
+    rating: 0,
   },
 ];
