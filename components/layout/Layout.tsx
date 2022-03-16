@@ -1,6 +1,7 @@
 import React, { FC, ReactNode } from "react";
 import { Header } from "components";
 import styled from "styled-components";
+import { BasketContextProvider } from "@context/basketContext";
 
 const LayoutContainer = styled.div`
   max-width: calc(100vw - 10%);
@@ -13,11 +14,14 @@ const LayoutContainer = styled.div`
 `;
 
 const Layout: FC<{ children: ReactNode }> = ({ children }) => {
+  console.log("Render Layout");
   return (
-    <LayoutContainer>
-      <Header />
-      <main>{children}</main>
-    </LayoutContainer>
+    <BasketContextProvider>
+      <LayoutContainer>
+        <Header />
+        <main>{children}</main>
+      </LayoutContainer>
+    </BasketContextProvider>
   );
 };
 

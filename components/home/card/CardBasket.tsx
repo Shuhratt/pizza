@@ -1,9 +1,12 @@
-import React, { FC } from "react";
+import React, { FC, useContext } from "react";
 import styled from "styled-components";
+import { BasketContext } from "@context/basketContext";
 
 export const CardBasket: FC<{ className?: string; count: number }> = ({ className, count }) => {
+  const { setAddCountItems } = useContext(BasketContext);
+
   return (
-    <button className={className} onClick={() => {}}>
+    <button className={className} onClick={() => setAddCountItems && setAddCountItems((prev) => prev + 1)}>
       Добавить {count > 0 && count}
     </button>
   );

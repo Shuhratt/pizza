@@ -1,6 +1,7 @@
-import React, { FC } from "react";
+import React, { FC, useContext } from "react";
 import BasketSvg from "@public/icons/basket.svg";
 import styled from "styled-components";
+import { BasketContext } from "@context/basketContext";
 
 const BasketBox = styled.div`
   display: flex;
@@ -31,12 +32,14 @@ const BasketText = styled.span`
 `;
 
 const Basket: FC<{}> = () => {
+  const { priceAll, countItems } = useContext(BasketContext);
+
   return (
     <BasketBox onClick={() => console.log("1")}>
-      <BasketText>0 ₽</BasketText>
+      <BasketText>{priceAll} ₽</BasketText>
       <BasketText>
         <BasketSvg />
-        <span>0</span>
+        <span>{countItems}</span>
       </BasketText>
     </BasketBox>
   );
