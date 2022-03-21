@@ -21,10 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5da7817f-6c8f-446d-9f4d-981078a61fdc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/header/basket/Basket.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/header/basket/Basket.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/home/card/Card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/card/Card.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/home/card/CardBasket.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/card/CardBasket.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/home/sorting/Sorting.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/sorting/Sorting.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/context/basketContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/context/basketContext.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -75,7 +71,7 @@
       <workItem from="1647248432724" duration="15865000" />
       <workItem from="1647420720374" duration="8284000" />
       <workItem from="1647506987311" duration="11257000" />
-      <workItem from="1647849599349" duration="5532000" />
+      <workItem from="1647849599349" duration="5673000" />
     </task>
     <servers />
   </component>
