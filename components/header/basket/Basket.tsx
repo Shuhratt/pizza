@@ -32,14 +32,15 @@ const BasketText = styled.span`
 `;
 
 const Basket: FC<{}> = () => {
-  const { priceAll, countItems } = useContext(BasketContext);
+  const { listBasket } = useContext(BasketContext);
+  const priceAll = listBasket.reduce((acc, el) => (acc += el.price), 0);
 
   return (
     <BasketBox onClick={() => console.log("1")}>
       <BasketText>{priceAll} ₽</BasketText>
       <BasketText>
         <BasketSvg />
-        <span>{countItems}</span>
+        <span>{listBasket.length}</span>
       </BasketText>
     </BasketBox>
   );

@@ -2,10 +2,12 @@ import React, { FC } from "react";
 import Image from "next/image";
 import styled from "styled-components";
 import { CardRadios } from "./CardRadio";
-import { CardProps } from "@components/home/card/Card.props";
+import type { CardProps } from "@components/home/card/Card.props";
 import { Basket } from "@components/home/card/CardBasket";
 
-const Card: FC<CardProps> = ({ id, image, title, types, sizes, price }) => {
+const Card: FC<CardProps> = (props) => {
+  const { id, image, title, types, sizes, price } = props;
+
   return (
     <CardBox>
       <CardImage>
@@ -18,7 +20,7 @@ const Card: FC<CardProps> = ({ id, image, title, types, sizes, price }) => {
         <span>
           от <b>{price} ₽</b>
         </span>
-        <Basket count={0} />
+        <Basket item={props} />
       </CardBottom>
     </CardBox>
   );

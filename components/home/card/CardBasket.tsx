@@ -1,13 +1,15 @@
 import React, { FC, useContext } from "react";
-import styled from "styled-components";
 import { BasketContext } from "@context/basketContext";
+import styled from "styled-components";
+import type { CardProps } from "@components/home/card/Card.props";
 
-export const CardBasket: FC<{ className?: string; count: number }> = ({ className, count }) => {
-  const { setAddCountItems } = useContext(BasketContext);
+export const CardBasket: FC<{ className?: string; item: CardProps }> = ({ className, item }) => {
+  const { setListBasket } = useContext(BasketContext);
 
+  // @ts-ignore
   return (
-    <button className={className} onClick={() => setAddCountItems && setAddCountItems((prev) => prev + 1)}>
-      Добавить {count > 0 && count}
+    <button className={className} onClick={() => setListBasket && setListBasket((prev) => [...prev, item])}>
+      Добавить
     </button>
   );
 };

@@ -1,18 +1,17 @@
 import React, { createContext, Dispatch, FC, ReactNode, useState } from "react";
+import type { CardProps } from "@components/home/card/Card.props";
+
 type BasketModel = {
-  countItems: number;
-  priceAll: number;
-  setAddCountItems?: Dispatch<React.SetStateAction<number>>;
+  listBasket: CardProps[];
+  setListBasket?: Dispatch<React.SetStateAction<Array<never>>>;
 };
 
 export const BasketContext = createContext<BasketModel>({
-  countItems: 0,
-  priceAll: 0,
-  setAddCountItems: () => {},
+  listBasket: [],
+  setListBasket: () => {},
 });
 
 export const BasketContextProvider: FC<{ children: ReactNode }> = ({ children }) => {
-  const [countItems, setAddCountItems] = useState(0);
-  const [priceAll, setPriceAll] = useState(0);
-  return <BasketContext.Provider value={{ countItems, priceAll, setAddCountItems }}>{children}</BasketContext.Provider>;
+  const [listBasket, setListBasket] = useState([]);
+  return <BasketContext.Provider value={{ setListBasket, listBasket }}>{children}</BasketContext.Provider>;
 };

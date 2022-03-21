@@ -2,24 +2,26 @@ import React, { Dispatch, FC, SetStateAction, useState } from "react";
 import ArrowSvg from "@public/icons/arrow.svg";
 import styled from "styled-components";
 import { Arrow, SortingBox, SortingBoxRel } from "@components/home/sorting/SortingStyled";
+import { sortList } from "@lib/constants/sort";
 
-const ListBox: FC<{ list: Array<string>; setIsOpen: Dispatch<SetStateAction<boolean>>; className?: string }> = ({
-  list,
-  className,
-  setIsOpen,
-}) => {
+const ListBox: FC<{
+  list: Array<{ id: number; text: string }>;
+  setIsOpen: Dispatch<SetStateAction<boolean>>;
+  setIdSortLabel: Dispatch<SetStateAction<number>>;
+  className?: string;
+}> = ({ list, className, setIsOpen, setIdSortLabel }) => {
   return (
     <div
       className={className}
       onClick={(e) => {
         const target = e.target as HTMLElement;
-        console.log(target.getAttribute("data-id"));
+        setIdSortLabel(Number(target.getAttribute("data-id")));
         setIsOpen(false);
       }}
     >
-      {list.map((text, i) => {
+      {list.map(({ id, text }) => {
         return (
-          <div key={i} data-id={++i}>
+          <div key={id} data-id={id}>
             {text}
           </div>
         );
@@ -31,11 +33,12 @@ const ListBox: FC<{ list: Array<string>; setIsOpen: Dispatch<SetStateAction<bool
 const ListBoxStyled = styled(ListBox)`
   position: absolute;
   top: calc(100% + 10px);
-  left: 42%;
+  left: 0;
   right: 0;
   background: #ffffff;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.09);
   border-radius: 10px;
+  width: 100%;
 
   > div {
     padding: 10px 14px;
@@ -55,6 +58,8 @@ const ListBoxStyled = styled(ListBox)`
 const Sorting: FC<{}> = () => {
   const [isOpen, setIsOpen] = useState(false);
   const onOpenSortClicked = () => setIsOpen((v) => !v);
+  const [idSortLabel, setIdSortLabel] = useState(1);
+  const text = sortList.find((el) => el.id === idSortLabel)?.text;
 
   return (
     <SortingBoxRel>
@@ -63,9 +68,9 @@ const Sorting: FC<{}> = () => {
           <ArrowSvg />
         </Arrow>
         <span>Сортировка по:</span>
-        <span>популярности</span>
+        <span>{text}</span>
       </SortingBox>
-      {isOpen && <ListBoxStyled list={["популярности", "по цене", "по алфавиту"]} setIsOpen={setIsOpen} />}
+      {isOpen && <ListBoxStyled list={sortList} setIsOpen={setIsOpen} setIdSortLabel={setIdSortLabel} />}
     </SortingBoxRel>
   );
 };
