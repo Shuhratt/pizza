@@ -6,7 +6,6 @@ import type { CardProps } from "@components/home/card/Card.props";
 export const CardBasket: FC<{ className?: string; item: CardProps }> = ({ className, item }) => {
   const { setListBasket } = useContext(BasketContext);
 
-  // @ts-ignore
   return (
     <button className={className} onClick={() => setListBasket && setListBasket((prev) => [...prev, item])}>
       Добавить

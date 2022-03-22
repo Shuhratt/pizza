@@ -1,9 +1,9 @@
-import React, { createContext, Dispatch, FC, ReactNode, useState } from "react";
+import React, { createContext, Dispatch, FC, ReactNode, useState, SetStateAction } from "react";
 import type { CardProps } from "@components/home/card/Card.props";
 
 type BasketModel = {
   listBasket: CardProps[];
-  setListBasket?: Dispatch<React.SetStateAction<Array<CardProps>>>;
+  setListBasket?: Dispatch<SetStateAction<Array<CardProps>>>;
 };
 
 export const BasketContext = createContext<BasketModel>({

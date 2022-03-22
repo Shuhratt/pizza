@@ -2,6 +2,24 @@ import React, { FC, useContext } from "react";
 import BasketSvg from "@public/icons/basket.svg";
 import styled from "styled-components";
 import { BasketContext } from "@context/basketContext";
+import { useRouter } from "next/router";
+
+const Basket: FC<{}> = () => {
+  const { listBasket } = useContext(BasketContext);
+  const priceAll = listBasket.reduce((acc, el) => (acc += el.price), 0);
+  const router = useRouter();
+
+  return (
+    <BasketBox onClick={() => router.push("/order")}>
+      <BasketText>{priceAll} ₽</BasketText>
+      <BasketText>
+        <BasketSvg />
+        <span>{listBasket.length}</span>
+      </BasketText>
+    </BasketBox>
+  );
+};
+export default Basket;
 
 const BasketBox = styled.div`
   display: flex;
@@ -30,19 +48,3 @@ const BasketText = styled.span`
     margin-left: 5px;
   }
 `;
-
-const Basket: FC<{}> = () => {
-  const { listBasket } = useContext(BasketContext);
-  const priceAll = listBasket.reduce((acc, el) => (acc += el.price), 0);
-
-  return (
-    <BasketBox onClick={() => console.log("1")}>
-      <BasketText>{priceAll} ₽</BasketText>
-      <BasketText>
-        <BasketSvg />
-        <span>{listBasket.length}</span>
-      </BasketText>
-    </BasketBox>
-  );
-};
-export default Basket;

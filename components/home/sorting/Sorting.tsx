@@ -1,15 +1,13 @@
-import React, { Dispatch, FC, SetStateAction, useState } from "react";
-import ArrowSvg from "@public/icons/arrow.svg";
-import styled from "styled-components";
+import React, { FC, useState } from "react";
 import { Arrow, SortingBox, SortingBoxRel } from "@components/home/sorting/SortingStyled";
 import { sortList } from "@lib/constants/sort";
+import { SortingProps } from "@components/home/sorting/Sorting.props";
+import styled from "styled-components";
+import ArrowSvg from "@public/icons/arrow.svg";
 
-const ListBox: FC<{
-  list: Array<{ id: number; text: string }>;
-  setIsOpen: Dispatch<SetStateAction<boolean>>;
-  setIdSortLabel: Dispatch<SetStateAction<number>>;
-  className?: string;
-}> = ({ list, className, setIsOpen, setIdSortLabel }) => {
+const ListBox: FC<SortingProps> = (props) => {
+  const { list, className, setIsOpen, setIdSortLabel } = props;
+
   return (
     <div
       className={className}
@@ -29,6 +27,28 @@ const ListBox: FC<{
     </div>
   );
 };
+
+const Sorting: FC<{}> = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const onOpenSortClicked = () => setIsOpen((v) => !v);
+  const [idSortLabel, setIdSortLabel] = useState(1);
+  const text = sortList.find((el) => el.id === idSortLabel)?.text;
+
+  return (
+    <SortingBoxRel>
+      <SortingBox onClick={onOpenSortClicked}>
+        <Arrow isRotate={isOpen}>
+          <ArrowSvg />
+        </Arrow>
+        <span>Сортировка по:</span>
+        <span>{text}</span>
+      </SortingBox>
+      {isOpen && <ListBoxStyled list={sortList} setIsOpen={setIsOpen} setIdSortLabel={setIdSortLabel} />}
+    </SortingBoxRel>
+  );
+};
+
+export default Sorting;
 
 const ListBoxStyled = styled(ListBox)`
   position: absolute;
@@ -54,25 +74,3 @@ const ListBoxStyled = styled(ListBox)`
     }
   }
 `;
-
-const Sorting: FC<{}> = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const onOpenSortClicked = () => setIsOpen((v) => !v);
-  const [idSortLabel, setIdSortLabel] = useState(1);
-  const text = sortList.find((el) => el.id === idSortLabel)?.text;
-
-  return (
-    <SortingBoxRel>
-      <SortingBox onClick={onOpenSortClicked}>
-        <Arrow isRotate={isOpen}>
-          <ArrowSvg />
-        </Arrow>
-        <span>Сортировка по:</span>
-        <span>{text}</span>
-      </SortingBox>
-      {isOpen && <ListBoxStyled list={sortList} setIsOpen={setIsOpen} setIdSortLabel={setIdSortLabel} />}
-    </SortingBoxRel>
-  );
-};
-
-export default Sorting;

@@ -21,6 +21,13 @@
   <component name="ChangeListManager">
     <list default="true" id="5da7817f-6c8f-446d-9f4d-981078a61fdc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/header/basket/Basket.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/header/basket/Basket.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/home/card/CardBasket.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/card/CardBasket.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/home/card/CardRadio.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/card/CardRadio.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/home/sorting/Sorting.props.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/sorting/Sorting.props.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/home/sorting/Sorting.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/sorting/Sorting.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/layout/Layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/layout/Layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/context/basketContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/context/basketContext.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -71,7 +78,9 @@
       <workItem from="1647248432724" duration="15865000" />
       <workItem from="1647420720374" duration="8284000" />
       <workItem from="1647506987311" duration="11257000" />
-      <workItem from="1647849599349" duration="5673000" />
+      <workItem from="1647849599349" duration="7522000" />
+      <workItem from="1647881536028" duration="7000" />
+      <workItem from="1647934861066" duration="1333000" />
     </task>
     <servers />
   </component>
@@ -95,10 +104,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1647422320786" />
-    <state x="548" y="138" key="FileChooserDialogImpl" timestamp="1646505068487">
+    <state x="548" y="138" key="FileChooserDialogImpl" timestamp="1647881541599">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="548" y="138" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1646505068487" />
+    <state x="548" y="138" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1647881541599" />
     <state x="277" y="57" key="SettingsEditor" timestamp="1646140713008">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
