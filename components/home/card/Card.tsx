@@ -2,11 +2,11 @@ import React, { FC } from "react";
 import Image from "next/image";
 import styled from "styled-components";
 import { CardRadios } from "./CardRadio";
-import type { CardProps } from "@components/home/card/Card.props";
+import type { CardPropsItem } from "@components/home/card/Card.props";
 import { Basket } from "@components/home/card/CardBasket";
 
-const Card: FC<CardProps> = (props) => {
-  const { id, image, title, types, sizes, price } = props;
+const Card: FC<CardPropsItem> = (props) => {
+  const { id, image, title, types, sizes, price, propss } = props;
 
   return (
     <CardBox>
