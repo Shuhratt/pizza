@@ -6,7 +6,7 @@ import type { CardPropsItem } from "@components/home/card/Card.props";
 import { Basket } from "@components/home/card/CardBasket";
 
 const Card: FC<CardPropsItem> = (props) => {
-  const { id, image, title, types, sizes, price, propss } = props;
+  const { id, image, title, types, sizes, price } = props;
 
   return (
     <CardBox>
