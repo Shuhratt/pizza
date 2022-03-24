@@ -1,9 +1,9 @@
 import React, { createContext, Dispatch, FC, ReactNode, useState, SetStateAction } from "react";
-import type { CardProps } from "@components/home/card/Card.props";
+import type { CardPropsItem } from "@components/home/card/Card.props";
 
 type BasketModel = {
-  listBasket: CardProps[];
-  setListBasket?: Dispatch<SetStateAction<Array<CardProps>>>;
+  listBasket: CardPropsItem[];
+  setListBasket?: Dispatch<SetStateAction<Array<CardPropsItem>>>;
 };
 
 export const BasketContext = createContext<BasketModel>({
@@ -12,6 +12,6 @@ export const BasketContext = createContext<BasketModel>({
 });
 
 export const BasketContextProvider: FC<{ children: ReactNode }> = ({ children }) => {
-  const [listBasket, setListBasket] = useState<Array<CardProps>>([]);
+  const [listBasket, setListBasket] = useState<Array<CardPropsItem>>([]);
   return <BasketContext.Provider value={{ setListBasket, listBasket }}>{children}</BasketContext.Provider>;
 };

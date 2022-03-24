@@ -1,15 +1,17 @@
-import React, { FC, ReactNode } from "react";
+import React, { FC, ReactNode, useState } from "react";
 import { Header } from "components";
 import styled from "styled-components";
 import { BasketContextProvider } from "@context/basketContext";
 
 const Layout: FC<{ children: ReactNode }> = ({ children }) => {
   console.log("Render Layout");
+  const [state, setState] = useState(false); // для проверки оптимизации
+
   return (
     <BasketContextProvider>
       <LayoutContainer>
         <Header />
-        <main>{children}</main>
+        <main onClick={() => setState((v) => !v)}>{children}</main>
       </LayoutContainer>
     </BasketContextProvider>
   );

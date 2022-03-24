@@ -1,15 +1,16 @@
-import React, { FC } from "react";
+import React, { FC, memo } from "react";
 import { Basket, Logo } from "components";
 import styled from "styled-components";
 
-const Header: FC<{}> = () => {
+const Header: FC<{}> = memo(() => {
+  console.log("Render Header");
   return (
     <HeaderContainer>
       <Logo />
       <Basket />
     </HeaderContainer>
   );
-};
+});
 export default Header;
 
 const HeaderContainer = styled.header`
