@@ -1,11 +1,13 @@
-import React, { useContext } from "react";
-import { BasketContext } from "@context/basketContext";
+import React from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "../../store";
 
 const Index = () => {
-  const { listBasket } = useContext(BasketContext);
+  const products = useSelector((state: RootState) => state.productsInfo.products);
+
   return (
     <div>
-      Корзина : <code>{JSON.stringify(listBasket)}</code>
+      Корзина : <code>{JSON.stringify(products)}</code>
     </div>
   );
 };

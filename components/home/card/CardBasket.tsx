@@ -1,18 +1,18 @@
-import React, { FC, useContext } from "react";
-import { BasketContext } from "@context/basketContext";
+import React, { FC } from "react";
 import styled from "styled-components";
-import type { CardProps } from "@components/home/card/Card.props";
+import type { CardPropsItem } from "./Card.props";
+import { useDispatch } from "react-redux";
+import { addProduct } from "../../../slices/productsSlice";
 
-export const CardBasket: FC<{ className?: string; item: CardProps }> = ({ className, item }) => {
-  const { setListBasket } = useContext(BasketContext);
+export const CardBasket: FC<{ className?: string; item: CardPropsItem }> = ({ className, item }) => {
+  const dispatch = useDispatch();
 
   return (
-    <button className={className} onClick={() => setListBasket && setListBasket((prev) => [...prev, item])}>
+    <button className={className} onClick={() => dispatch(addProduct(item))}>
       Добавить
     </button>
   );
 };
-
 export const Basket = styled(CardBasket)`
   background: #ffffff;
   border: 1px solid #eb5a1e;
