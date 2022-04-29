@@ -1,13 +1,17 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store";
+import { FooterOrder, HeaderOrder, Product } from "components";
+import type { NextPage } from "next";
 
-const Index = () => {
+const Index: NextPage = () => {
   const products = useSelector((state: RootState) => state.productsInfo.products);
 
   return (
     <div>
-      Корзина : <code>{JSON.stringify(products)}</code>
+      <HeaderOrder />
+      <Product />
+      <FooterOrder />
     </div>
   );
 };

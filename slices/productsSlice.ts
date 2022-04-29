@@ -15,10 +15,15 @@ const productsSlice = createSlice({
     addProduct: (state, action: PayloadAction<CardPropsItem>) => {
       state.products = [...state.products, action.payload];
     },
-    removeProduct: (state, action) => {},
+    removeProduct: (state, action: PayloadAction<number>) => {
+      state.products.filter(({ id }) => id !== action.payload);
+    },
+    clearAll: (state) => {
+      state.products = [];
+    },
   },
 });
 
-export const { addProduct, removeProduct } = productsSlice.actions;
+export const { addProduct, removeProduct, clearAll } = productsSlice.actions;
 
 export default productsSlice.reducer;

@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import styled from "styled-components";
 import type { CardPropsItem } from "./Card.props";
 import { useDispatch } from "react-redux";
-import { addProduct } from "../../../slices/productsSlice";
+import { addProduct } from "@slices/productsSlice";
 
 export const CardBasket: FC<{ className?: string; item: CardPropsItem }> = ({ className, item }) => {
   const dispatch = useDispatch();
