@@ -6,8 +6,8 @@ const FooterOrder: FC<{}> = () => {
   const router = useRouter();
   return (
     <FooterOrderBox>
-      <div>Всего пицц: 3 шт.</div>
-      <div>Сумма заказа: 900 ₽</div>
+      <div>Всего пицц:0 шт.</div>
+      <div>Сумма заказа: 0 ₽</div>
       <Button type="button" onClick={() => router.push("/")} isGray>
         Вернуться назад
       </Button>

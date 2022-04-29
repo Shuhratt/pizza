@@ -1,8 +1,8 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import type { CardPropsItem } from "@components/home/card/Card.props";
+import type { ProductProps } from "@components/order/Product";
 
 type productsState = {
-  products: Array<CardPropsItem>;
+  products: Array<ProductProps>;
 };
 const initialState: productsState = {
   products: [],
@@ -12,12 +12,15 @@ const productsSlice = createSlice({
   initialState,
   name: "products",
   reducers: {
-    addProduct: (state, action: PayloadAction<CardPropsItem>) => {
+    //CREATE
+    addProduct: (state, action: PayloadAction<ProductProps>) => {
       state.products = [...state.products, action.payload];
     },
+    //UPDATE
     removeProduct: (state, action: PayloadAction<number>) => {
       state.products.filter(({ id }) => id !== action.payload);
     },
+    //DELETE
     clearAll: (state) => {
       state.products = [];
     },

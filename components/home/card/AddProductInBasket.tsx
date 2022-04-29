@@ -1,19 +1,22 @@
 import React, { FC } from "react";
 import styled from "styled-components";
-import type { CardPropsItem } from "./Card.props";
 import { useDispatch } from "react-redux";
 import { addProduct } from "@slices/productsSlice";
+import type { ProductProps } from "@components/order/Product";
 
-export const CardBasket: FC<{ className?: string; item: CardPropsItem }> = ({ className, item }) => {
+type AddProductInBasketProps = { product: ProductProps; className?: string };
+
+export const AddProductInBasket: FC<AddProductInBasketProps> = ({ product, className }) => {
   const dispatch = useDispatch();
 
   return (
-    <button className={className} onClick={() => dispatch(addProduct(item))}>
+    <button className={className} onClick={() => dispatch(addProduct(product))}>
       Добавить
     </button>
   );
 };
-export const Basket = styled(CardBasket)`
+
+export const AddBasket = styled(AddProductInBasket)`
   background: #ffffff;
   border: 1px solid #eb5a1e;
   border-radius: 30px;

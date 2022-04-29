@@ -4,6 +4,7 @@ export { default as Logo } from "./header/logo/Logo";
 export { default as Basket } from "./header/basket/Basket";
 export { default as Categories } from "./home/categories/Categories";
 export { default as Sorting } from "./home/sorting/Sorting";
+export { default as Products } from "./order/Products";
 export { default as Product } from "./order/Product";
 export { default as FooterOrder } from "./order/FooterOrder";
 export { default as HeaderOrder } from "./order/HeaderOrder";

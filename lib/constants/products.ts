@@ -1,4 +1,4 @@
-export const items = [
+export const products = [
   {
     id: 1,
     image: `/image`,

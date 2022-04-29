@@ -4,5 +4,4 @@ export const menu = [
   { id: 3, text: "Вегетарианская", href: "#" },
   { id: 4, text: "Гриль", href: "#" },
   { id: 5, text: "Острые", href: "#" },
-  { id: 6, text: "Закрытые", href: "#" },
 ];

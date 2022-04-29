@@ -1,7 +1,12 @@
-import React, { FC, useState } from "react";
+import React, { Dispatch, FC, SetStateAction, useState } from "react";
 import styled from "styled-components";
 
-export const CardRadios: FC<{ types: Array<{ id: number; text: string }> }> = ({ types }) => {
+type RadiosProps = {
+  types: Array<{ id: number; text: string }>;
+  setId: Dispatch<SetStateAction<number>>;
+};
+
+export const CardRadios: FC<RadiosProps> = ({ types, setId }) => {
   const [numberActive, setNumberActive] = useState(1);
 
   return (
@@ -11,8 +16,8 @@ export const CardRadios: FC<{ types: Array<{ id: number; text: string }> }> = ({
           <Label
             key={i}
             onClick={() => {
-              console.log(id, text);
               setNumberActive(id);
+              setId(id);
             }}
             isActive={numberActive === id}
           >

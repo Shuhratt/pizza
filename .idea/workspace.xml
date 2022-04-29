@@ -21,13 +21,20 @@
   <component name="ChangeListManager">
     <list default="true" id="5da7817f-6c8f-446d-9f4d-981078a61fdc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/home/card/CardBasket.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/card/CardBasket.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/home/card/Card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/card/Card.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/home/card/CardBasket.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/card/AddProductInBasket.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/home/card/CardRadio.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/card/CardRadio.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/context/basketContext.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/order/FooterOrder.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/order/FooterOrder.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/order/HeaderOrder.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/order/HeaderOrder.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/order/Product.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/order/Product.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/constants/items.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/constants/products.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/constants/menu.ts" beforeDir="false" afterPath="$PROJECT_DIR$/lib/constants/menu.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/order/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/order/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/slices/productsSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/slices/productsSlice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/store/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +90,7 @@
       <workItem from="1648112872235" duration="8423000" />
       <workItem from="1651146483905" duration="6298000" />
       <workItem from="1651153274257" duration="75000" />
-      <workItem from="1651217726270" duration="7724000" />
+      <workItem from="1651217726270" duration="17294000" />
     </task>
     <servers />
   </component>

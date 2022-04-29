@@ -1,26 +1,40 @@
-import React, { FC } from "react";
+import React, { FC, useMemo, useState } from "react";
 import Image from "next/image";
 import styled from "styled-components";
 import { CardRadios } from "./CardRadio";
+import { AddBasket } from "@components/home/card/AddProductInBasket";
 import type { CardPropsItem } from "@components/home/card/Card.props";
-import { Basket } from "@components/home/card/CardBasket";
 
 const Card: FC<CardPropsItem> = (props) => {
+  console.log("Render Card");
   const { id, image, title, types, sizes, price } = props;
+  const [typeId, setTypeId] = useState(1);
+  const [sizeId, setSizeId] = useState(1);
+  const selectProduct = useMemo(
+    () => ({
+      id,
+      image,
+      title,
+      price,
+      type: types.find((typeProduct) => typeProduct.id === typeId),
+      size: sizes.find((sizeProduct) => sizeProduct.id === sizeId),
+    }),
+    [typeId, sizeId]
+  );
 
   return (
     <CardBox>
       <CardImage>
-        <Image src={`${image}${id}.png`} width={200} height={200} />
+        <Image src={`${image}${id}.png`} width={200} height={200} alt={title} />
       </CardImage>
       <CardTitle>{title}</CardTitle>
-      <CardRadios types={types} />
-      <CardRadios types={sizes} />
+      <CardRadios types={types} setId={setTypeId} />
+      <CardRadios types={sizes} setId={setSizeId} />
       <CardBottom>
         <span>
           от <b>{price} ₽</b>
         </span>
-        <Basket item={props} />
+        <AddBasket product={selectProduct} />
       </CardBottom>
     </CardBox>
   );

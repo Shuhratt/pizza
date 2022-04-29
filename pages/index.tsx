@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import React from "react";
 import { Categories, Sorting } from "components";
 import { menu } from "@lib/constants/menu";
-import { items } from "@lib/constants/items";
+import { products } from "@lib/constants/products";
 import styled from "styled-components";
 import Card from "@components/home/card/Card";
 
@@ -14,7 +14,7 @@ const Home: NextPage = () => {
         <Sorting />
       </HomeHead>
       <HomeCards>
-        {items.map((props, index) => (
+        {products.map((props, index) => (
           <Card key={index} {...props} />
         ))}
       </HomeCards>

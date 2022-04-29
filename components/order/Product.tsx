@@ -5,18 +5,29 @@ import MinusSvg from "@public/icons/minus.svg";
 import PlusSvg from "@public/icons/plus.svg";
 import CloseSvg from "@public/icons/close.svg";
 
-type Product = {};
+export type ProductProps = {
+  id: number;
+  image: string;
+  title: string;
+  price: number;
+  type: { id: number; text: string } | undefined;
+  size: { id: number; text: string } | undefined;
+  count?: number;
+};
 
-const Product: FC<{}> = () => {
+const Product: FC<ProductProps> = (props) => {
+  const { id, image, title, price, type, size } = props;
+
   return (
-    <ProductBox>
+    <ProductCard>
       <ProductImage>
-        image
-        {/*<Image src={`${image}${id}.png`} width={200} height={200} />*/}
+        <Image src={`${image}${id}.png`} width={100} height={100} alt={title} />
       </ProductImage>
       <ProductName>
-        <h3>name</h3>
-        <p>тонкое тесто, 26 см.</p>
+        <h3>{title}</h3>
+        <p>
+          {type?.text} тесто, {size?.text}
+        </p>
       </ProductName>
       <ProductCount>
         <button type="button" onClick={() => {}} aria-label={"Уменьшить на 1"} title={"Уменьшить на 1"}>
@@ -27,14 +38,15 @@ const Product: FC<{}> = () => {
           <PlusSvg />
         </button>
       </ProductCount>
+      <ProductPrice>{price}</ProductPrice>
       <ProductRemoveButton type="button" onClick={() => {}} aria-label="Удалить товар" title={"Удалить товар"}>
         <CloseSvg />
       </ProductRemoveButton>
-    </ProductBox>
+    </ProductCard>
   );
 };
 
-const ProductBox = styled.div`
+const ProductCard = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -44,10 +56,13 @@ const ProductBox = styled.div`
   }
 `;
 
-const ProductImage = styled.div``;
+const ProductImage = styled.div`
+  margin-right: 2%;
+`;
 const ProductName = styled.div`
   display: flex;
   flex-direction: column;
+  flex: 1 0 auto;
 
   > * {
     margin: 0;
@@ -57,6 +72,14 @@ const ProductCount = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 0 5%;
+`;
+const ProductPrice = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin: 0 5%;
 `;
 const ProductRemoveButton = styled.button``;
 
